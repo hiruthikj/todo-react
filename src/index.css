@@ -1,0 +1,45 @@
+.center-text {
+    text-align: center;
+}
+
+.todo-list {
+    display: grid;
+    justify-content: center;
+    gap: 3px 0;
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 20rem;
+}
+
+.container {
+    min-height: 100vh;
+    max-width: 48rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.header {
+    display: block;
+    text-align: center;
+    padding: min(5%, 7rem) 0;
+}
+
+.footer {
+    display: block;
+    margin: 5rem auto;
+}
+
+.task {
+    flex-basis: 20rem;
+    flex-grow: 3;
+}
+
+.btn {
+    flex-basis: 3rem;
+    flex-grow: 1;
+}
