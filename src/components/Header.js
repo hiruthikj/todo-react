@@ -1,9 +1,9 @@
 import React from "react";
 
-function Header() {
+function Header({ title }) {
   return (
     <div className="header">
-      <h1>Todo App</h1>
+      <h1>{title}</h1>
     </div>
   );
 }

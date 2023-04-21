@@ -43,3 +43,6 @@
     flex-basis: 3rem;
     flex-grow: 1;
 }
+.strikethrough {
+    text-decoration: line-through;
+}
