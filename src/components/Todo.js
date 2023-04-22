@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import TodoHeader from "./todo/TodoHeader";
 import TodoList from "./todo/TodoList";
 
