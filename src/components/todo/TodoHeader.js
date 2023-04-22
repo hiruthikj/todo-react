@@ -1,8 +1,11 @@
-function TodoHeader() {
+import CreateTask from "./CreateTask";
+import TodoSearch from "./TodoSearch";
+
+function TodoHeader({ tasks, setTasks }) {
   return (
     <div className="header">
-      <input type="text" name="todo-search" id="todo-search" />
-      <button type="submit">Clear</button>
+      <TodoSearch tasks={tasks} setTasks={setTasks} />
+      <CreateTask tasks={tasks} setTasks={setTasks} />
     </div>
   );
 }
