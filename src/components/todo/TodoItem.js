@@ -8,6 +8,13 @@ function TodoItem({ task, deleteTask, toggleTask, editTask }) {
     setOnEdit(!onEdit);
   }
 
+  function handleKeyPress(e) {
+    if (e.key.toLowerCase() === "enter") {
+      editTask(task.id, editedName);
+      setOnEdit(false);
+    }
+  }
+
   return (
     <div className="todo-item">
       <input
@@ -23,6 +30,7 @@ function TodoItem({ task, deleteTask, toggleTask, editTask }) {
           className=""
           value={editedName}
           onChange={(e) => setEditedName(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
       ) : (
         <p className={task.isCompleted ? "task strikethrough" : "task"}>
