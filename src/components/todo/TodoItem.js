@@ -8,10 +8,14 @@ function TodoItem({ task, deleteTask, toggleTask, editTask }) {
     setOnEdit(!onEdit);
   }
 
+  function saveEditedTask() {
+    editTask(task.id, editedName);
+    setOnEdit(false);
+  }
+
   function handleKeyPress(e) {
     if (e.key.toLowerCase() === "enter") {
-      editTask(task.id, editedName);
-      setOnEdit(false);
+      saveEditedTask();
     }
   }
 
@@ -39,13 +43,7 @@ function TodoItem({ task, deleteTask, toggleTask, editTask }) {
       )}
 
       {onEdit ? (
-        <button
-          className="btn"
-          onClick={() => {
-            editTask(task.id, editedName);
-            setOnEdit(false);
-          }}
-        >
+        <button className="btn" onClick={saveEditedTask}>
           Save
         </button>
       ) : (
