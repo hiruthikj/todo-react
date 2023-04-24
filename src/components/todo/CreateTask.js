@@ -8,7 +8,6 @@ function CreateTask({ tasks, setTasks }) {
   function renderAddButton() {
     return (
       <div>
-        {" "}
         <button onClick={() => setCreatingTask(true)}>Create Task</button>
       </div>
     );
@@ -20,6 +19,7 @@ function CreateTask({ tasks, setTasks }) {
         <input
           type="text"
           placeholder="Add Task"
+          value={newTaskName}
           onChange={(e) => setNewTaskName(e.target.value)}
         />
         <button>Add</button>
@@ -27,7 +27,12 @@ function CreateTask({ tasks, setTasks }) {
     );
   }
 
-  function createTask() {
+  function createTask(e) {
+    // It is required, because form usually sends response to server
+    // and servers in react send pack same page (as we arent making action to any URL)
+    // and the page will reload, causing react to restart
+    e.preventDefault();
+
     setTasks([
       ...tasks,
       {
