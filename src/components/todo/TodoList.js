@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-function TodoList({ tasks, setTasks }) {
+function TodoList({ tasks, setTasks, filterText }) {
   function deleteTask(id) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
@@ -33,7 +33,11 @@ function TodoList({ tasks, setTasks }) {
     );
   }
 
-  const todoList = tasks.map((task) => {
+  const filteredTasks = tasks.filter((task) =>
+    task.name.toLowerCase().includes(filterText.toLowerCase())
+  );
+
+  const todoList = filteredTasks.map((task) => {
     return (
       <TodoItem
         task={task}

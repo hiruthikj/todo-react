@@ -1,4 +1,4 @@
-function TodoSearch({ tasks, setTasks }) {
+function TodoSearch({ filterText, setFilterText }) {
   return (
     <>
       <input
@@ -6,8 +6,12 @@ function TodoSearch({ tasks, setTasks }) {
         name="todo-search"
         id="todo-search"
         placeholder="Search"
+        value={filterText}
+        onChange={(e) => setFilterText(e.target.value)}
       />
-      <button type="submit">Clear</button>
+      <button type="submit" onClick={() => setFilterText("")}>
+        Clear
+      </button>
     </>
   );
 }

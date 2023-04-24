@@ -11,11 +11,17 @@ function Todo() {
   ];
 
   const [tasks, setTasks] = useState(todoData);
+  const [filterText, setFilterText] = useState("");
 
   return (
     <div>
-      <TodoHeader tasks={tasks} setTasks={setTasks} />
-      <TodoList tasks={tasks} setTasks={setTasks} />
+      <TodoHeader
+        tasks={tasks}
+        setTasks={setTasks}
+        filterText={filterText}
+        setFilterText={setFilterText}
+      />
+      <TodoList tasks={tasks} setTasks={setTasks} filterText={filterText} />
     </div>
   );
 }
